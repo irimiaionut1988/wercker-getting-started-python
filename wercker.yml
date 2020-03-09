@@ -19,7 +19,19 @@ build:
 
     # A custom script step, name value is used in the UI
     # and the code value contains the command that get executed
-    - script:
-        name: python unit test
-        code: |
-          python app_test.py
+    # - script:
+    #     name: python unit test
+    #     code: |
+    #       python app_test.py
+
+# deploy:
+#   steps:
+#     - internal/docker-scratch-push:
+#         username: $QUAY_USERNAME
+#         password: $QUAY_PASSWORD
+#         cmd: ./app
+#         tag: $WERCKER_GIT_COMMIT
+#         ports: "5000"
+#         repository: quay.io/wercker/wercker-kubernetes-quay
+#         registry: https://quay.io
+
