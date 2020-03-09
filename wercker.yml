@@ -24,14 +24,14 @@ build:
     #     code: |
     #       python app_test.py
 
-# deploy:
-#   steps:
-#     - internal/docker-scratch-push:
-#         username: $QUAY_USERNAME
-#         password: $QUAY_PASSWORD
-#         cmd: ./app
-#         tag: $WERCKER_GIT_COMMIT
-#         ports: "5000"
-#         repository: quay.io/wercker/wercker-kubernetes-quay
-#         registry: https://quay.io
+deploy:
+  steps:
+    - internal/docker-scratch-push:
+        username: $OCIR_USERNAME
+        password: $OCIR_PASSWORD
+        cmd: ./app
+        tag: $WERCKER_GIT_COMMIT
+        ports: "5000"
+        repository: bom.ocir.io/isvglobal/wercker-getting-started-python
+        registry: https://bom.ocir.io/v2
 
