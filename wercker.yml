@@ -24,8 +24,7 @@ build:
     #     code: |
     #       python app_test.py
 
-deploy:
-  steps:
+
     - internal/docker-scratch-push:
         username: $OCIR_USERNAME
         password: $OCIR_PASSWORD
